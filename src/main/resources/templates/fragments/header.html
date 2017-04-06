@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="headerinc">
+    <title>Demo Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</div>
+
+<div th:fragment="header">
+    <a th:href="@{/}">Home</a>
+    <ul>
+        <li><a th:href="@{/user/login}">Login</a></li>
+        <li><a th:href="@{/user/register}">Register</a></li>
+        <li><a th:href="@{/user/search}">Search</a></li>
+        <li><a th:href="@{/user/logout}">Logout</a></li>
+    </ul>
+</div>
+
+</html>

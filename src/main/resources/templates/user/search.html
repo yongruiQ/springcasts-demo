@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--<meta charset="UTF-8">-->
+    <th:block th:include="fragments/header :: headerinc"></th:block>
+    <link href="../../static/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div th:include="fragments/header :: header"></div>
+
+<h3>Search Users</h3>
+
+<form th:action="@{/user/search}" th:object="${searchCriteria}" method="post">
+    <p>First Name: <input type="text" th:field="*{firstname}"/></p>
+    <p>Last Name: <input type="text" th:field="${searchCriteria.lastname}"/></p>
+
+    <p/>
+    <input type="submit" value="Search"/>
+</form>
+
+<div>
+    <ol>
+        <li th:each="user : ${users}">
+            <span th:text="${user.firstname}+' '+${user.lastname}"></span>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
