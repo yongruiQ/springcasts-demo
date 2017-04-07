@@ -26,7 +26,7 @@ public class UserService {
     public boolean validateLogin(LoginForm user)
     {
 //        List<User> users =  userRepository.findByFirstnameAndPassword(user.getAccountname(), user.getPassword());
-        List<User> users = userRepository.checkUserInput(user.getAccountname(), user.getPassword());
+        List<User> users = userRepository.checkUserLogin(user.getAccountname(), user.getPassword());
         return users !=null && users.size()>0;
     }
 

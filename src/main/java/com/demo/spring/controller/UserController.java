@@ -82,7 +82,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(Model model, HttpSession session)
+    public String logout(HttpSession session)
     {
         session.removeAttribute("login");
         return "redirect:/user/login";
@@ -123,7 +123,7 @@ public class UserController {
 //    @ResponseBody
     public String delete(@PathVariable User user)
     {
-        String name = user.getFirstname()+" "+user.getLastname();
+//        String name = user.getFirstname()+" "+user.getLastname();
 
         userService.delete(user);
 
